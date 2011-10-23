@@ -1,0 +1,12 @@
+git add .gitignore;
+git add GitAddHospitalScheduling.bat;
+git add HospitalScheduling.sln;
+git add HospitalScheduling/HospitalScheduling.csproj;
+git add HospitalScheduling/*.cs;
+git add Statistics;
+git add HospitalScheduling/HospitalScheduling.csproj;
+git add DomainLayer/DomainLayer.csproj;
+git add DomainLayer/*.cs;
+git add DomainLayerTests/DomainLayerTests.csproj;
+git add DomainLayerTests/*.cs;
+git status;

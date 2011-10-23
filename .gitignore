@@ -1,0 +1,13 @@
+HospitalScheduling.suo
+
+HospitalScheduling/bin
+HospitalScheduling/obj
+
+DomainLayer/bin
+DomainLayer/obj
+
+DomainLayerTests/bin
+DomainLayerTests/obj
+
+_ReSharper.HospitalScheduling.suo
+HospitalScheduling.suo.5.1.ReSharper.user
