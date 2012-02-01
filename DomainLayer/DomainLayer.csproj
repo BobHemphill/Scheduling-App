@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Block.cs" />
+    <Compile Include="CalendarYear.cs" />
     <Compile Include="Resident.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rotation.cs" />
     <Compile Include="RotationResident.cs" />
+    <Compile Include="RotationShift.cs" />
+    <Compile Include="RotationShiftResident.cs" />
+    <Compile Include="Shift.cs" />
     <Compile Include="VacationRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
