@@ -1,0 +1,13 @@
+D:\Development\Scheduling-App\Gui\bin\Debug\Gui.exe
+D:\Development\Scheduling-App\Gui\bin\Debug\Gui.pdb
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\MainWindow.baml
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\MainWindow.g.cs
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\App.g.cs
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\Gui_MarkupCompile.cache
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\Gui.g.resources
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\Gui.Properties.Resources.resources
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\Gui.exe
+D:\Development\Scheduling-App\Gui\obj\x86\Debug\Gui.pdb
