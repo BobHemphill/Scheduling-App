@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseObject.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="CalendarYear.cs" />
     <Compile Include="Resident.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="RotationShiftResident.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="VacationRequest.cs" />
+    <Compile Include="Validation\IValidate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
