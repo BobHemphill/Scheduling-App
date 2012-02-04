@@ -6,25 +6,21 @@ using NUnit.Framework;
 using DomainLayer;
 using Rhino.Mocks;
 
-namespace DomainLayerTests
-{
+namespace DomainLayerTests {
     [TestFixture]
-    public class CalendarYearTest
-    {
+    public class CalendarYearTest {
         [Test]
-        public void ValidateFullYearCoverage()
-        {
+        public void ValidateFullYearCoverage() {
             var year = new CalendarYear(2011);
 
             Assert.IsFalse(year.Validate());
 
-            year.Blocks.Add(new Block{StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 12, 31)});
+            year.Blocks.Add(new Block { StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 12, 31) });
             Assert.IsTrue(year.Validate());
         }
 
         [Test]
-        public void ValidateFullYearCoverage_MultipleBlocks()
-        {
+        public void ValidateFullYearCoverage_MultipleBlocks() {
             var year = new CalendarYear(2011);
 
             Assert.IsFalse(year.Validate());
@@ -35,8 +31,7 @@ namespace DomainLayerTests
         }
 
         [Test]
-        public void ValidateFullYearCoverage_FullYear_Valid()
-        {
+        public void ValidateFullYearCoverage_FullYear_Valid() {
             var year = new CalendarYear(2011);
 
             Assert.IsFalse(year.Validate());
@@ -57,8 +52,7 @@ namespace DomainLayerTests
         }
 
         [Test]
-        public void ValidateFullYearCoverage_FullYear_Invalid()
-        {
+        public void ValidateFullYearCoverage_FullYear_Invalid() {
             var year = new CalendarYear(2011);
 
             Assert.IsFalse(year.Validate());
