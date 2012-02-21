@@ -6,7 +6,7 @@ using DomainLayer.Validation;
 
 namespace DomainLayer {
     public class CalendarYear : BaseObject {
-        int Year { get; set; }
+        public int Year { get; set; }
         bool IsLeapYear { get { return false; } }
 
         List<Block> blocks = new List<Block>();

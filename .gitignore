@@ -9,5 +9,14 @@ DomainLayer/obj
 DomainLayerTests/bin
 DomainLayerTests/obj
 
+ServiceLayer/bin
+ServiceLayer/obj
+
+ServiceLayerTests/bin
+ServiceLayerTests/obj
+
+Gui/bin
+Gui/obj
+
 _ReSharper.HospitalScheduling.suo
 HospitalScheduling.suo.5.1.ReSharper.user

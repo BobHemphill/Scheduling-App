@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ServiceLayer;
+using Gui.CalendarYear;
 
 namespace Gui {
     /// <summary>
@@ -19,6 +21,14 @@ namespace Gui {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            DisplayCalendar();
+        }
+
+        void DisplayCalendar() {
+            var calendarYear = MessageFactory.CreateCalendarYearMessage();
+            var controller = new CalendarYearViewController(calendarYear, CalendarYear);
+
+            controller.PopulateView();
         }
     }
 }
