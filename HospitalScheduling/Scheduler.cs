@@ -13,10 +13,10 @@ namespace HospitalScheduling {
       CreateResidents();
       CreateRotations();
 
-      while(rotations.All(r => !r.IsScheduled)) {
-        var rotation = rotations.First(r => !r.IsScheduled);
-        rotation.Schedule(residents);
-      }
+      //while(rotations.All(r => !r.IsScheduled)) {
+      //  var rotation = rotations.First(r => !r.IsScheduled);
+      //  rotation.Schedule(residents);
+      //}
 
       DisplaySchedule();
     }
@@ -41,10 +41,10 @@ namespace HospitalScheduling {
 
     private void CreateRotations() {
       rotations = new List<Rotation>();
-      rotations.Add(new Rotation("ER", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
-      rotations.Add(new Rotation("Red", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
-      rotations.Add(new Rotation("Purple", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
-      rotations.Add(new Rotation("Yellow", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
+      //rotations.Add(new Rotation("ER", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
+      //rotations.Add(new Rotation("Red", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
+      //rotations.Add(new Rotation("Purple", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
+      //rotations.Add(new Rotation("Yellow", (DateTime.Today.AddDays(-7)), DateTime.Today, new ResidentYearsCount()));
     }
   }
 }

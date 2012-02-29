@@ -7,4 +7,8 @@ namespace DomainLayer.Validation {
     public interface IValidate {
         bool Validate();
     }
+
+    public interface IValidateChildren {
+        bool ValidateChildren();
+    }
 }

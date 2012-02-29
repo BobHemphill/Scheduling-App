@@ -5,12 +5,12 @@ using System.Text;
 using DomainLayer.Validation;
 
 namespace DomainLayer {
-    public class CalendarYear : BaseObject {
+    public class CalendarYear : BaseParentObject {
         public int Year { get; set; }
-        bool IsLeapYear { get { return false; } }
 
         List<Block> blocks = new List<Block>();
         public List<Block> Blocks { get { return blocks; } set { blocks = value; } }
+        public override List<BaseObject> Children { get { return Blocks.Cast<BaseObject>().ToList(); } }
 
         public CalendarYear(int year) {
             Year = year;
@@ -19,8 +19,8 @@ namespace DomainLayer {
         public override bool Validate() {
             if (Blocks.Count < 1) { return false; }
             else {
-                var allBlocksValid = Blocks.Aggregate(true, (current, block) => current &= block.Validate());
-                if (!allBlocksValid) { return false; }
+                var allRotationsValid = base.Validate();
+                if (!allRotationsValid) { return false; }
 
                 var orderedBlocks = Blocks.OrderBy(i => i.StartDate).ThenBy(i => i.EndDate);
                 var min = orderedBlocks.First();
