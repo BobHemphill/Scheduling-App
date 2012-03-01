@@ -63,6 +63,10 @@
     <Compile Include="ResidentTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{CBF2FE88-D8CC-4710-BEBC-EA0A655BC761}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DomainLayer\DomainLayer.csproj">
       <Project>{AE072329-0A48-4982-9E2A-1EDF72F47918}</Project>
       <Name>DomainLayer</Name>

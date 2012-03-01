@@ -9,6 +9,6 @@ namespace DomainLayer.Validation {
     }
 
     public interface IValidateChildren {
-        bool ValidateChildren();
+        bool ValidateChildren(List<BaseObject> children);
     }
 }

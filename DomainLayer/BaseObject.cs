@@ -12,15 +12,16 @@ namespace DomainLayer {
         public abstract bool Validate();
     }
 
-    public abstract class BaseParentObject : BaseObject, IValidateChildren {
+    public abstract class BaseParentObject : BaseObject, IHaveChildren {
         public abstract List<BaseObject> Children { get; }
-        
-        public override bool Validate() {
-            return ValidateChildren();
+        readonly IValidateChildren childValidator;
+
+        public BaseParentObject(IValidateChildren childValidator) {
+            this.childValidator = childValidator;
         }
 
         public bool ValidateChildren() {
-            return Children.Aggregate(true, (current, child) => current &= child.Validate());
+            return childValidator.ValidateChildren(Children);
         }
     }
 }

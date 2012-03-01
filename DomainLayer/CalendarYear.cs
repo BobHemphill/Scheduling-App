@@ -12,15 +12,19 @@ namespace DomainLayer {
         public List<Block> Blocks { get { return blocks; } set { blocks = value; } }
         public override List<BaseObject> Children { get { return Blocks.Cast<BaseObject>().ToList(); } }
 
-        public CalendarYear(int year) {
+        public CalendarYear(int year)
+            : this(year, new ChildValidator()) {
+        }
+
+        public CalendarYear(int year, IValidateChildren validator) : base(validator) {
             Year = year;
         }
 
         public override bool Validate() {
             if (Blocks.Count < 1) { return false; }
             else {
-                var allRotationsValid = base.Validate();
-                if (!allRotationsValid) { return false; }
+                var allBlocksValid = ValidateChildren();
+                if (!allBlocksValid) { return false; }
 
                 var orderedBlocks = Blocks.OrderBy(i => i.StartDate).ThenBy(i => i.EndDate);
                 var min = orderedBlocks.First();
