@@ -9,6 +9,8 @@ namespace ServiceLayer.Messages {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
+        public List<RotationMessage> Rotations { get; set; }
+
         public BlockMessage(Block block)
             : base(block) {
 
@@ -18,6 +20,11 @@ namespace ServiceLayer.Messages {
             var block = obj as Block;
             StartDate = block.StartDate;
             EndDate = block.EndDate;
+
+            Rotations = new List<RotationMessage>();
+            foreach (var rotation in block.Rotations) {
+                Rotations.Add(new RotationMessage(rotation));
+            }
         }
     }
 }

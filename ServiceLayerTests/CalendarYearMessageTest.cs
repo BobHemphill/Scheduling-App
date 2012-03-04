@@ -11,7 +11,11 @@ namespace ServiceLayerTests {
     public class CalendarYearMessageTest {
         [Test]
         public void GenerateMessage() {
-            var year = new CalendarYear(2012) { Blocks = new List<Block> { new Block { Id = 1 }, new Block { Id = 2 } } };
+            var year = new CalendarYear(2012) {
+                Id = 1,
+                Name = "Name",
+                Blocks = new List<Block> { new Block { Id = 1 }, new Block { Id = 2 } }
+            };
             var yearMessage = new CalendarYearMessage(year);
 
             ServiceTestHelper.AssertDomainMessageProperties(year, yearMessage);

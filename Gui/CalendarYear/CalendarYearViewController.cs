@@ -6,9 +6,10 @@ using ServiceLayer.Messages;
 using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows.Controls;
+using Gui.Navigation;
 
 namespace Gui.CalendarYear {
-    public class CalendarYearViewController {
+    public class CalendarYearViewController : NavigationController {
         readonly CalendarYearMessage DataContext;
         readonly CalendarYearView View;
 

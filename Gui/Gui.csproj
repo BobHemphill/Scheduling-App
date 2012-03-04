@@ -57,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Block\BlockView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CalendarYear\CalendarYearView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,6 +73,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Block\BlockView.xaml.cs">
+      <DependentUpon>BlockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Block\BlockViewController.cs" />
     <Compile Include="CalendarYear\CalendarYearView.xaml.cs">
       <DependentUpon>CalendarYearView.xaml</DependentUpon>
     </Compile>
@@ -79,6 +87,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Navigation\NavigationController.cs" />
+    <Compile Include="Navigation\NavigationEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

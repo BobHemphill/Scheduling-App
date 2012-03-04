@@ -27,8 +27,12 @@ namespace Gui {
         void DisplayCalendar() {
             var calendarYear = MessageFactory.CreateCalendarYearMessage();
             var controller = new CalendarYearViewController(calendarYear, CalendarYear);
-
+            controller.Navigate += new Navigation.NavigationEventHandler(controller_Navigate);
             controller.PopulateView();
+        }
+
+        void controller_Navigate(object sender, Navigation.NavigationEventArgs args) {
+            throw new NotImplementedException();
         }
     }
 }
