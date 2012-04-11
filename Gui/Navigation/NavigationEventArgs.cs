@@ -6,7 +6,8 @@ using System.Text;
 namespace Gui.Navigation {
     public enum NavigationObjectTypes {
         CalendarYear,
-        Block
+        Block,
+        Rotation
     }
 
     public class NavigationObject {

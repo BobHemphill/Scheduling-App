@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Common;
 
 namespace DomainLayer {
     public static class DomainFactory {
@@ -18,9 +19,19 @@ namespace DomainLayer {
 
         public static Block CreateBlock(DateTime startDate, DateTime endDate) {
             var block = new Block { StartDate = startDate, EndDate = endDate };
+            foreach (var rotationType in Enum.GetValues(typeof(RotationTypes))) {
+                block.Rotations.Add(CreateRotation((RotationTypes)rotationType));
+            }
             AssignBaseObjectProperties(block);
             return block;
         }
+
+        public static Rotation CreateRotation(RotationTypes rotationType) {
+            var rotation = new Rotation { RotationType = rotationType };
+            AssignBaseObjectProperties(rotation);
+            return rotation;
+        }
+
 
         public static void AssignBaseObjectProperties(BaseObject obj){
             obj.Id = 1;

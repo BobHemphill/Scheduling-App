@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ServiceLayer;
 using Gui.CalendarYear;
+using Gui.Block;
 
 namespace Gui {
     /// <summary>
@@ -25,14 +26,32 @@ namespace Gui {
         }
 
         void DisplayCalendar() {
+            var view = new CalendarYearView();
+            this.Content = view;
             var calendarYear = MessageFactory.CreateCalendarYearMessage();
-            var controller = new CalendarYearViewController(calendarYear, CalendarYear);
+            var controller = new CalendarYearViewController(calendarYear, view);
             controller.Navigate += new Navigation.NavigationEventHandler(controller_Navigate);
             controller.PopulateView();
         }
 
+        void DispalyBlock() {
+            var view = new BlockView();
+            this.Content = view;
+            var block = MessageFactory.CreateBlockMessage();
+            var controller = new BlockViewController(block, view);
+            controller.Navigate += new Navigation.NavigationEventHandler(controller_Navigate);
+            controller.PopulateView();    
+        }
+
         void controller_Navigate(object sender, Navigation.NavigationEventArgs args) {
-            throw new NotImplementedException();
+            switch (args.ToNavigationObject.NavigationObjectType) {
+                case Navigation.NavigationObjectTypes.CalendarYear:
+                    DisplayCalendar();
+                    break;
+                case Navigation.NavigationObjectTypes.Block:
+                    DispalyBlock();
+                    break;
+            }
         }
     }
 }

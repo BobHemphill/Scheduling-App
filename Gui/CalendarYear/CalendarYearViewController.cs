@@ -23,9 +23,17 @@ namespace Gui.CalendarYear {
                 var textBlock = new TextBlock() { Text = block.Name };
                 var border = new Border() { Background = new SolidColorBrush(Colors.AliceBlue), Margin = new System.Windows.Thickness(5) };
                 border.Child = textBlock;
-
+                border.MouseUp += new System.Windows.Input.MouseButtonEventHandler(border_MouseUp);
                 View.BlockPanel.Children.Add(border);
             }
+        }
+
+        void border_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e) {
+            FireNavigate(GetNavigationEventArgs());
+        }
+
+        protected override NavigationEventArgs GetNavigationEventArgs() {
+            return new NavigationEventArgs(null, new NavigationObject(NavigationObjectTypes.Block, 1));
         }
     }
 }
