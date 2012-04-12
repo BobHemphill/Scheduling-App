@@ -12,17 +12,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Gui.CalendarYear {
+namespace Gui.Rotation {
     /// <summary>
-    /// Interaction logic for CalendarYearView.xaml
+    /// Interaction logic for RotationItemView.xaml
     /// </summary>
-    public partial class CalendarYearView : UserControl {
-        public CalendarYearView() {
+    public partial class RotationItemView : UserControl {
+        public RotationItemView() {
             InitializeComponent();
-        }
-
-        public void SetDataContext(object dc) {
-            RootGrid.DataContext = dc;
         }
     }
 }

@@ -7,32 +7,33 @@ using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows.Controls;
 using Gui.Navigation;
+using Gui.Block;
+using System.Windows.Input;
 
 namespace Gui.CalendarYear {
-    public class CalendarYearViewController : NavigationController {
+    public class CalendarYearViewController : NavigationController<BlockItemView> {
         readonly CalendarYearMessage DataContext;
         readonly CalendarYearView View;
 
         public CalendarYearViewController(CalendarYearMessage dataContext, CalendarYearView view) {
             DataContext = dataContext;
             View = view;
+            View.SetDataContext(DataContext);
         }
 
-        public void PopulateView() {
+        public override void PopulateView() {
             foreach (var block in DataContext.Blocks) {
-                var textBlock = new TextBlock() { Text = block.Name };
-                var border = new Border() { Background = new SolidColorBrush(Colors.AliceBlue), Margin = new System.Windows.Thickness(5) };
-                border.Child = textBlock;
-                border.MouseUp += new System.Windows.Input.MouseButtonEventHandler(border_MouseUp);
-                View.BlockPanel.Children.Add(border);
+                var child = CreateChildElement();
+                child.DataContext = block;
+                View.BlockPanel.Children.Add(child);
             }
         }
 
-        void border_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e) {
-            FireNavigate(GetNavigationEventArgs());
+        protected override NavigationEventArgs GetParentNavigationEventArgs(object sender, MouseButtonEventArgs args) {
+            throw new NotImplementedException();
         }
 
-        protected override NavigationEventArgs GetNavigationEventArgs() {
+        protected override NavigationEventArgs GetChildNavigationEventArgs(object sender, MouseButtonEventArgs args) {
             return new NavigationEventArgs(null, new NavigationObject(NavigationObjectTypes.Block, 1));
         }
     }

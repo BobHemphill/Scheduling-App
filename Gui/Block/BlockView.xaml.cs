@@ -20,5 +20,9 @@ namespace Gui.Block {
         public BlockView() {
             InitializeComponent();
         }
+
+        public void SetDataContext(object dc) {
+            RootGrid.DataContext = dc;
+        }
     }
 }

@@ -4,8 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">    
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Background="Transparent">
-        <StackPanel x:Name="BlockPanel" Orientation="Horizontal"/>        
-    </ScrollViewer>
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Year}"/>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Background="Transparent">
+            <StackPanel x:Name="BlockPanel" Orientation="Horizontal"/>
+        </ScrollViewer>
+    </Grid>
+    
 </UserControl>

@@ -12,17 +12,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Gui.CalendarYear {
+namespace Gui.Block {
     /// <summary>
-    /// Interaction logic for CalendarYearView.xaml
+    /// Interaction logic for BlockItemView.xaml
     /// </summary>
-    public partial class CalendarYearView : UserControl {
-        public CalendarYearView() {
+    public partial class BlockItemView : UserControl {
+        public BlockItemView() {
             InitializeComponent();
-        }
-
-        public void SetDataContext(object dc) {
-            RootGrid.DataContext = dc;
         }
     }
 }

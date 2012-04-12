@@ -14,12 +14,15 @@ using System.Windows.Shapes;
 using ServiceLayer;
 using Gui.CalendarYear;
 using Gui.Block;
+using Gui.Navigation;
 
 namespace Gui {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        INavigationController currentController;
+
         public MainWindow() {
             InitializeComponent();
             DisplayCalendar();
@@ -31,6 +34,7 @@ namespace Gui {
             var calendarYear = MessageFactory.CreateCalendarYearMessage();
             var controller = new CalendarYearViewController(calendarYear, view);
             controller.Navigate += new Navigation.NavigationEventHandler(controller_Navigate);
+            currentController = controller;
             controller.PopulateView();
         }
 
@@ -40,10 +44,13 @@ namespace Gui {
             var block = MessageFactory.CreateBlockMessage();
             var controller = new BlockViewController(block, view);
             controller.Navigate += new Navigation.NavigationEventHandler(controller_Navigate);
+            currentController = controller;
             controller.PopulateView();    
         }
 
         void controller_Navigate(object sender, Navigation.NavigationEventArgs args) {
+            currentController.Navigate -= new Navigation.NavigationEventHandler(controller_Navigate);
+            currentController.UnLoad();
             switch (args.ToNavigationObject.NavigationObjectType) {
                 case Navigation.NavigationObjectTypes.CalendarYear:
                     DisplayCalendar();

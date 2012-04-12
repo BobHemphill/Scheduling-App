@@ -9,6 +9,11 @@ namespace Common {
         Rotation2,
         Rotation3,
         Rotation4,
-        Rotation5
+        Rotation5,
+        Rotation6,
+        Rotation7,
+        Rotation8,
+        Rotation9,
+        Rotation10
     }
 }

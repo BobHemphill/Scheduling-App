@@ -9,10 +9,10 @@ namespace DomainLayer {
         public static CalendarYear CreateCalendarYear() {
             var today = DateTime.Today;
             var year = new CalendarYear(today.Year);
-            year.Blocks.Add(CreateBlock(today, today.AddMonths(3).AddDays(-1)));
-            year.Blocks.Add(CreateBlock(today.AddMonths(3), today.AddMonths(6).AddDays(-1)));
-            year.Blocks.Add(CreateBlock(today.AddMonths(6), today.AddMonths(9).AddDays(-1)));
-            year.Blocks.Add(CreateBlock(today.AddMonths(9), today.AddMonths(12).AddDays(-1)));
+            year.Blocks.Add(CreateBlock(today, today.AddMonths(1).AddDays(-1)));
+            for (int i = 1; i < 12; i++) {
+                year.Blocks.Add(CreateBlock(today.AddMonths(i), today.AddMonths(i + 1).AddDays(-1)));
+            }
             AssignBaseObjectProperties(year);
             return year;
         }
@@ -32,9 +32,9 @@ namespace DomainLayer {
             return rotation;
         }
 
-
-        public static void AssignBaseObjectProperties(BaseObject obj){
-            obj.Id = 1;
+        static int id = 0;
+        public static void AssignBaseObjectProperties(BaseObject obj) {
+            obj.Id = id++;
             obj.Name = Guid.NewGuid().ToString();
         }
     }
