@@ -7,7 +7,7 @@ namespace DomainLayer
 {
     public class RotationShift
     {
-        public Rotation Rotation { get; set; }
+        //public Rotation Rotation { get; set; }
         public Shift Shift { get; set; }
     }
 }

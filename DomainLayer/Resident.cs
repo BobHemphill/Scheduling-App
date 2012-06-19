@@ -19,7 +19,7 @@ namespace DomainLayer {
 
     public ResidentYears ResidentYear { get; set; }
     public List<VacationRequest> VacationRequests { get; set; }
-    public List<Rotation> Rotations { get; set; }
+   // public List<Rotation> Rotations { get; set; }
 
     public override string ToString() {
       return String.Format("{0}, {1}({2})", LastName, FirstName, ResidentYear);

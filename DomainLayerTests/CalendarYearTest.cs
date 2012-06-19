@@ -13,14 +13,14 @@ namespace DomainLayerTests {
         [Test]
         public void ValidateFullYearCoverage() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<EmptyValidationParams>>();
             var year = new CalendarYear(2011, childValidator);
 
             Assert.IsFalse(year.Validate());
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 12, 31) });
             
             using (mockery.Record()) {
-                SetupResult.For(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                SetupResult.For(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.IsTrue(year.Validate());
@@ -30,13 +30,13 @@ namespace DomainLayerTests {
         [Test]
         public void ValidateFullYearCoverage_MultipleBlocks() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<EmptyValidationParams>>();
             var year = new CalendarYear(2011, childValidator);
 
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 6, 30) });
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 7, 1), EndDate = new DateTime(2011, 12, 31) });
             using (mockery.Record()) {
-                SetupResult.For(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                SetupResult.For(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.IsTrue(year.Validate());
@@ -46,7 +46,7 @@ namespace DomainLayerTests {
         [Test]
         public void ValidateFullYearCoverage_FullYear_Valid() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<EmptyValidationParams>>();
             var year = new CalendarYear(2011, childValidator);
 
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 1, 31) });
@@ -62,7 +62,7 @@ namespace DomainLayerTests {
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 11, 1), EndDate = new DateTime(2011, 11, 30) });
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 12, 1), EndDate = new DateTime(2011, 12, 31) });
             using (mockery.Record()) {
-                SetupResult.For(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                SetupResult.For(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.IsTrue(year.Validate());
@@ -72,7 +72,7 @@ namespace DomainLayerTests {
         [Test]
         public void ValidateFullYearCoverage_FullYear_Invalid() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<EmptyValidationParams>>();
             var year = new CalendarYear(2011, childValidator);
 
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 1, 1), EndDate = new DateTime(2011, 1, 30) });
@@ -88,7 +88,7 @@ namespace DomainLayerTests {
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 11, 1), EndDate = new DateTime(2011, 11, 30) });
             year.Blocks.Add(new Block { StartDate = new DateTime(2011, 12, 1), EndDate = new DateTime(2011, 12, 31) });
             using (mockery.Record()) {
-                SetupResult.For(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                SetupResult.For(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.IsFalse(year.Validate());
@@ -103,7 +103,7 @@ namespace DomainLayerTests {
             block.EndDate = new DateTime(2011, 12, 31);
 
             using (mockery.Record()) {
-                SetupResult.For(block.Validate()).Return(true);
+                SetupResult.For(block.Validate(null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 var year = new CalendarYear(2011);
@@ -116,12 +116,12 @@ namespace DomainLayerTests {
         [Test]
         public void All_Blocks_Not_Valid() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<EmptyValidationParams>>();
             
             var year = new CalendarYear(2011, childValidator);
 
             using (mockery.Record()) {
-                SetupResult.For(childValidator.ValidateChildren(null)).IgnoreArguments().Return(false);
+                SetupResult.For(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(false);
             }
             using (mockery.Playback()) {
                 Assert.IsFalse(year.Validate());

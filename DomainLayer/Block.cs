@@ -6,7 +6,7 @@ using Common;
 using DomainLayer.Validation;
 
 namespace DomainLayer {
-    public class Block : BaseParentObject {
+    public class Block : BaseParentObject<EmptyValidationParams, DateRangeValidationParams> {
         public CalendarYear Year { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -14,18 +14,22 @@ namespace DomainLayer {
 
         List<Rotation> rotations = new List<Rotation>();
         public List<Rotation> Rotations { get { return rotations; } set { rotations = value; } }
-        public override List<BaseObject> Children { get { return Rotations.Cast<BaseObject>().ToList(); } }
+        public override List<BaseObject<DateRangeValidationParams>> Children { get { return Rotations.Cast<BaseObject<DateRangeValidationParams>>().ToList(); } }
 
-        public Block():this(new ChildValidator()) {
-
-        }
-
-        public Block(IValidateChildren childValidator) : base(childValidator) {
+        public Block()
+            : this(new ChildValidator<DateRangeValidationParams>()) {
 
         }
 
-        public override bool Validate() {
-            var allRotationsValid = ValidateChildren();
+        public Block(IValidateChildren<DateRangeValidationParams> childValidator)
+            : base(childValidator) {
+
+        }
+
+        public override EmptyValidationParams ValidationParams { get { return new EmptyValidationParams(); } }
+        public override DateRangeValidationParams ChildValidationParams { get { return new DateRangeValidationParams(StartDate, EndDate); } }
+        public override bool Validate(EmptyValidationParams validationParams) {
+            var allRotationsValid = ValidateChildren(ChildValidationParams);
             if (!allRotationsValid) { return false; }
 
             foreach (var type in System.Enum.GetValues(typeof(RotationTypes))) {

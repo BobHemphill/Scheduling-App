@@ -5,23 +5,30 @@ using System.Text;
 using DomainLayer.Validation;
 
 namespace DomainLayer {
-    public abstract class BaseObject : IValidate {
+    public abstract class BaseObject{
         public int Id { get; set; }
         public string Name { get; set; }
-
-        public abstract bool Validate();
     }
 
-    public abstract class BaseParentObject : BaseObject, IHaveChildren {
-        public abstract List<BaseObject> Children { get; }
-        readonly IValidateChildren childValidator;
+    public abstract class BaseObject<T> : BaseObject, IValidate {
+        public abstract bool Validate(T validationParams);
+        public abstract T ValidationParams { get; }
 
-        public BaseParentObject(IValidateChildren childValidator) {
+        public virtual bool Validate() { return Validate(ValidationParams); }
+    }
+
+    public abstract class BaseParentObject<T, U> : BaseObject<T>, IHaveChildren<U> {
+        public abstract List<BaseObject<U>> Children { get; }
+        
+        readonly IValidateChildren<U> childValidator;
+
+        public BaseParentObject(IValidateChildren<U> childValidator) {
             this.childValidator = childValidator;
         }
 
-        public bool ValidateChildren() {
-            return childValidator.ValidateChildren(Children);
+        public abstract U ChildValidationParams { get; }
+        public bool ValidateChildren(U childValidationParams) {
+            return childValidator.ValidateChildren(Children, childValidationParams);
         }
     }
 }

@@ -14,11 +14,11 @@ namespace DomainLayerTests {
         [Test]
         public void IsValid_All_Rotations_Not_Valid() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<DateRangeValidationParams>>();
             var block = new Block(childValidator);
 
             using (mockery.Record()) {
-                Expect.Call(childValidator.ValidateChildren(null)).IgnoreArguments().Return(false);
+                Expect.Call(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(false);
             }
             using (mockery.Playback()) {
                 Assert.IsFalse(block.Validate());
@@ -28,7 +28,7 @@ namespace DomainLayerTests {
         [Test]
         public void IsValid_Includes_All_Rotation_False() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<DateRangeValidationParams>>();
 
             var rotationList = new List<Rotation>();
             foreach (var type in System.Enum.GetValues(typeof(RotationTypes))) {
@@ -39,7 +39,7 @@ namespace DomainLayerTests {
             block.Rotations.AddRange(rotationList);
 
             using (mockery.Record()) {
-                Expect.Call(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                Expect.Call(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.IsFalse(block.Validate());
@@ -49,7 +49,7 @@ namespace DomainLayerTests {
         [Test]
         public void IsValid_Includes_All_Rotation_True() {
             var mockery = new MockRepository();
-            var childValidator = mockery.StrictMock<IValidateChildren>();
+            var childValidator = mockery.StrictMock<IValidateChildren<DateRangeValidationParams>>();
 
             var rotationList = new List<Rotation>();
             foreach (var type in System.Enum.GetValues(typeof(RotationTypes))) {
@@ -59,7 +59,7 @@ namespace DomainLayerTests {
             block.Rotations.AddRange(rotationList);
 
             using (mockery.Record()) {
-                Expect.Call(childValidator.ValidateChildren(null)).IgnoreArguments().Return(true);
+                Expect.Call(childValidator.ValidateChildren(null, null)).IgnoreArguments().Return(true);
             }
             using (mockery.Playback()) {
                 Assert.True(block.Validate());
