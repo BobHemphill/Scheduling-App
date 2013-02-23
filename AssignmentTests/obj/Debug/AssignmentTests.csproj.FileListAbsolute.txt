@@ -1,0 +1,15 @@
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\AssignmentTests.dll
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\AssignmentTests.pdb
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Assignment.dll
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Common.dll
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\DomainLayer.exe
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\nunit.framework.dll
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Assignment.pdb
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Common.pdb
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\DomainLayer.pdb
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\nunit.framework.xml
+D:\Development\Scheduling-App\AssignmentTests\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Scheduling-App\AssignmentTests\obj\Debug\AssignmentTests.dll
+D:\Development\Scheduling-App\AssignmentTests\obj\Debug\AssignmentTests.pdb
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Rhino.Mocks.dll
+D:\Development\Scheduling-App\AssignmentTests\bin\Debug\Rhino.Mocks.xml

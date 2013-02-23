@@ -40,6 +40,10 @@
       <HintPath>..\lib\NUnit\framework\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.mocks, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\NUnit\framework\nunit.mocks.dll</HintPath>
+    </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\lib\Rhino.Mocks-3.6-Build-21\Rhino.Mocks.dll</HintPath>
       <Private>True</Private>
@@ -56,11 +60,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlockTest.cs" />
-    <Compile Include="CalendarYearTest.cs" />
+    <Compile Include="DomainObjects\RotationTest.cs" />
+    <Compile Include="Factories\ShiftDayFactoryTest.cs" />
+    <Compile Include="Factories\ShiftFactoryTest.cs" />
+    <Compile Include="Validation\BlockCollectionValidatorTest.cs" />
+    <Compile Include="DomainObjects\BlockTest.cs" />
+    <Compile Include="DomainObjects\CalendarYearTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResidentTest.cs" />
+    <Compile Include="DomainObjects\ResidentTest.cs" />
+    <Compile Include="Validation\RotationCollectionValidatorTest.cs" />
+    <Compile Include="Validation\RotationShiftCollectionValidatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

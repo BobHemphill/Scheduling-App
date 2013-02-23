@@ -16,8 +16,8 @@ namespace ServiceLayerTests {
                 Name = "Name", 
                 StartDate = DateTime.Today.AddDays(50),
                 EndDate = DateTime.Today.AddDays(75),
-                Rotations = new List<Rotation> { new Rotation { Id = 1 }, new Rotation { Id = 2 } }
             };
+            block.Rotations.AddRange(new List<Rotation> { new Rotation { Id = 1 }, new Rotation { Id = 2 } });
             var blockMessage = new BlockMessage(block);
 
             ServiceTestHelper.AssertDomainMessageProperties(block, blockMessage);

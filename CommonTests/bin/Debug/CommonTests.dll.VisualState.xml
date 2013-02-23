@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1008]D:\Development\Scheduling-App\CommonTests\bin\Debug\CommonTests.dll</TopNode>
+  <SelectedNode>[0-1009]CommonTests</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1008]D:\Development\Scheduling-App\CommonTests\bin\Debug\CommonTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1009]CommonTests" Expanded="true" />
+    <Node UniqueName="[0-1005]CommonTests.ActionListTest" Expanded="true" />
+    <Node UniqueName="[0-1000]CommonTests.DateRangeTest" Expanded="true" />
+  </Nodes>
+</VisualState>

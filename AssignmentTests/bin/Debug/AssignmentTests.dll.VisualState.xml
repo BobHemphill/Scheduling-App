@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1041]D:\Development\Scheduling-App\AssignmentTests\bin\Debug\AssignmentTests.dll</TopNode>
+  <SelectedNode>[0-1042]AssignmentTests</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1041]D:\Development\Scheduling-App\AssignmentTests\bin\Debug\AssignmentTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1042]AssignmentTests" Expanded="true" />
+    <Node UniqueName="[0-1031]AssignmentTests.Average80HoursOver4WeeksTest" Expanded="true" />
+    <Node UniqueName="[0-1039]AssignmentTests.BlockAssignmentTest" Expanded="true" />
+    <Node UniqueName="[0-1037]AssignmentTests.CalendarAssignerTest" Expanded="true" />
+    <Node UniqueName="[0-1008]AssignmentTests.ContinuousDutyHourConstraintTest" Expanded="true" />
+    <Node UniqueName="[0-1009]AssignmentTests.ContinuousDutyHourConstraintTest.Assignable_AlreadyAssigned24_NotPGY1" Expanded="true" />
+    <Node UniqueName="[0-1013]AssignmentTests.ContinuousDutyHourConstraintTest.Assignable_ShiftWouldResultInMoreThan24_NotPGY1" Expanded="true" />
+    <Node UniqueName="[0-1019]AssignmentTests.MinimumTimeOffConstraintTest" Expanded="true" />
+    <Node UniqueName="[0-1024]AssignmentTests.ResidentSelectorTest" Expanded="true" />
+    <Node UniqueName="[0-1000]AssignmentTests.RotationAssignerTest" Expanded="true" />
+    <Node UniqueName="[0-1035]AssignmentTests.SchedulerTest" Expanded="true" />
+    <Node UniqueName="[0-1003]AssignmentTests.ShiftAssignerTest" Expanded="true" />
+  </Nodes>
+</VisualState>

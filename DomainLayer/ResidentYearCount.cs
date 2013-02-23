@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DomainLayer {
     public class ResidentYearsCount {
@@ -24,16 +21,14 @@ namespace DomainLayer {
         public RotationResidents this[ResidentYears index] {
             get {
                 switch (index) {
-                    case ResidentYears.Intern:
+                    case ResidentYears.PGY_1:
                         return new RotationResidents(Interns);
-                    case ResidentYears.Senior1:
+                    case ResidentYears.PGY_2:
                         return new RotationResidents(Senior1s);
-                    case ResidentYears.Senior2:
+                    case ResidentYears.PGY_3:
                         return new RotationResidents(Senior2s);
                     case ResidentYears.Chief:
                         return new RotationResidents(Chiefs);
-                    case ResidentYears.Any:
-                        return new RotationResidents(Anys);
                     default:
                         throw new IndexOutOfRangeException();
                 }

@@ -1,0 +1,9 @@
+D:\Development\Scheduling-App\Assignment\bin\Debug\Assignment.dll
+D:\Development\Scheduling-App\Assignment\bin\Debug\Assignment.pdb
+D:\Development\Scheduling-App\Assignment\bin\Debug\DomainLayer.exe
+D:\Development\Scheduling-App\Assignment\bin\Debug\Common.dll
+D:\Development\Scheduling-App\Assignment\bin\Debug\DomainLayer.pdb
+D:\Development\Scheduling-App\Assignment\bin\Debug\Common.pdb
+D:\Development\Scheduling-App\Assignment\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Scheduling-App\Assignment\obj\Debug\Assignment.dll
+D:\Development\Scheduling-App\Assignment\obj\Debug\Assignment.pdb

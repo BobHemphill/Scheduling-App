@@ -1,0 +1,9 @@
+D:\Development\Scheduling-App\CommonTests\bin\Debug\CommonTests.dll
+D:\Development\Scheduling-App\CommonTests\bin\Debug\CommonTests.pdb
+D:\Development\Scheduling-App\CommonTests\bin\Debug\Common.dll
+D:\Development\Scheduling-App\CommonTests\bin\Debug\nunit.framework.dll
+D:\Development\Scheduling-App\CommonTests\bin\Debug\Common.pdb
+D:\Development\Scheduling-App\CommonTests\bin\Debug\nunit.framework.xml
+D:\Development\Scheduling-App\CommonTests\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Scheduling-App\CommonTests\obj\Debug\CommonTests.dll
+D:\Development\Scheduling-App\CommonTests\obj\Debug\CommonTests.pdb
