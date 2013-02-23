@@ -18,5 +18,17 @@ ServiceLayerTests/obj
 Gui/bin
 Gui/obj
 
+Assignment/bin
+Assignment/obj
+
+AssignmentTests/bin
+AssignmentTests/obj
+
+Common/bin
+Common/obj
+
+CommonTests/bin
+CommonTests/obj
+
 _ReSharper.HospitalScheduling.suo
 HospitalScheduling.suo.5.1.ReSharper.user

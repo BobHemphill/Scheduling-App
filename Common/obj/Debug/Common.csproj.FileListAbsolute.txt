@@ -1,5 +1,0 @@
-D:\Development\Scheduling-App\Common\bin\Debug\Common.dll
-D:\Development\Scheduling-App\Common\bin\Debug\Common.pdb
-D:\Development\Scheduling-App\Common\obj\Debug\ResolveAssemblyReference.cache
-D:\Development\Scheduling-App\Common\obj\Debug\Common.dll
-D:\Development\Scheduling-App\Common\obj\Debug\Common.pdb
